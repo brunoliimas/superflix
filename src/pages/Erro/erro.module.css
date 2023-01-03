@@ -1,0 +1,12 @@
+.error{
+    flex-direction: column;
+    justify-content: center;
+}
+.text{
+    margin: 20px 0;
+    text-align: center;
+    color: #022540;
+}
+.image{
+    max-width: 300px;
+}
