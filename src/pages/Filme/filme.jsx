@@ -5,6 +5,8 @@ import api from "../../services/api";
 
 import film from './filme.module.css'
 import { UilStar, UilArrowLeft } from '@iconscout/react-unicons'
+import { toast } from 'react-toastify';
+
 
 export default function Filme() {
 
@@ -41,22 +43,20 @@ export default function Filme() {
 
 
     function salvarFilme() {
-        const minhaLista = window.localStorage.getItem("@supeflix");
-        console.log(minhaLista);
-        
+        const minhaLista = window.localStorage.getItem("@superflix");
+
         let filmesSalvos = JSON.parse(minhaLista) || [];
-        console.log(filmesSalvos);
 
         const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id)
-        console.log(hasFilme);
 
         if (hasFilme) {
-            alert("Ja ta salvo");
+            toast.warn("Esse filme já foi salvo :|")
             return;
         }
         filmesSalvos.push(filme);
         localStorage.setItem("@superflix", JSON.stringify(filmesSalvos));
-        alert("Salvo com sucesso");
+        toast.success("Filme salvo com sucesso :)")
+
         return;
     }
 

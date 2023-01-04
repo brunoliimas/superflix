@@ -38,7 +38,9 @@ img {
   width: 100%;
   display: block;
 }
-
+li{
+  list-style: none;
+}
 .container{
   margin: 0 auto;
   display: flex;
